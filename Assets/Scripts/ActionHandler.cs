@@ -23,11 +23,6 @@ public class ActionHandler : MonoBehaviour
 
     private void DecreaseHP()
     {
-        loadingBar.value -= 0.1f;
-
-        if (loadingBar.value < 0)
-        {
-            loadingBar.value = 0;
-        }
+        loadingBar.value = Mathf.Clamp01(loadingBar.value - 0.1f);
     }
 }
